@@ -1,0 +1,18 @@
+# ── MedKnow — lancement en une commande ───────────────────────────────────────
+# 1. Mettez votre clé Gemini dans .env.local (ligne GEMINI_API_KEY=...)
+# 2. Puis :  docker compose up --build
+#    L'app est sur http://localhost:3000
+#    (Arrêt : Ctrl+C ; en arrière-plan : docker compose up -d)
+
+services:
+  medknow:
+    build: .
+    image: medknow
+    container_name: medknow
+    ports:
+      # Port 3000 déjà occupé sur cette machine → app exposée sur 3001.
+      # Accès : http://localhost:3001 (changez librement le premier nombre)
+      - '3001:3000'
+    env_file:
+      - .env.local
+    restart: unless-stopped

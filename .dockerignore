@@ -1,0 +1,14 @@
+node_modules
+.next
+.git
+.gitignore
+Dockerfile
+docker-compose.yml
+.env
+.env.local
+.env.*.local
+*.md
+!README.md
+coverage
+.vercel
+docs/scratch

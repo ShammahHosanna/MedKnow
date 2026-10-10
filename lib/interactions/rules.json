@@ -1,0 +1,94 @@
+{
+  "version": 1,
+  "note": "Local critical-interaction rules (spec EF-21). NOT exhaustive. Severity levels are working assumptions from public sources (ANSM interaction thesaurus, product characteristics / FDA labeling). Review by a pharmacist is required before relying on them beyond the demo.",
+  "rules": [
+    {
+      "id": "P1",
+      "substances": ["warfarin", "ibuprofen"],
+      "severity": "high",
+      "explanation": {
+        "en": "Taking these two medicines together increases the risk of bleeding.",
+        "fr": "La prise simultanée de ces deux médicaments augmente le risque de saignement.",
+        "es": "Tomar estos dos medicamentos juntos aumenta el riesgo de sangrado."
+      },
+      "source": "ANSM — Thésaurus des interactions médicamenteuses (association déconseillée/à prendre en compte) ; FDA labeling (DailyMed)."
+    },
+    {
+      "id": "P2",
+      "substances": ["warfarin", "acetylsalicylic_acid"],
+      "severity": "high",
+      "explanation": {
+        "en": "Taking these two medicines together increases the risk of bleeding.",
+        "fr": "La prise simultanée de ces deux médicaments augmente le risque de saignement.",
+        "es": "Tomar estos dos medicamentos juntos aumenta el riesgo de sangrado."
+      },
+      "source": "ANSM — Thésaurus des interactions médicamenteuses (association déconseillée) ; FDA labeling (DailyMed)."
+    },
+    {
+      "id": "P3",
+      "substances": ["simvastatin", "clarithromycin"],
+      "severity": "high",
+      "explanation": {
+        "en": "This combination can cause severe muscle damage (rhabdomyolysis).",
+        "fr": "Cette association peut provoquer une atteinte musculaire sévère (rhabdomyolyse).",
+        "es": "Esta combinación puede causar un daño muscular grave (rabdomiólisis)."
+      },
+      "source": "ANSM — Thésaurus des interactions médicamenteuses (association contre-indiquée) ; RCP."
+    },
+    {
+      "id": "P4",
+      "substances": ["sildenafil", "isosorbide_dinitrate"],
+      "severity": "high",
+      "explanation": {
+        "en": "This combination can cause a severe drop in blood pressure.",
+        "fr": "Cette association peut provoquer une chute sévère de la tension artérielle.",
+        "es": "Esta combinación puede provocar una caída grave de la presión arterial."
+      },
+      "source": "ANSM — Thésaurus des interactions médicamenteuses (association contre-indiquée) ; RCP."
+    },
+    {
+      "id": "P5",
+      "substances": ["methotrexate", "trimethoprim_sulfamethoxazole"],
+      "severity": "high",
+      "explanation": {
+        "en": "This combination can cause serious blood toxicity.",
+        "fr": "Cette association peut provoquer une toxicité sanguine grave.",
+        "es": "Esta combinación puede causar toxicidad sanguínea grave."
+      },
+      "source": "ANSM — Thésaurus des interactions médicamenteuses (association déconseillée) ; RCP."
+    },
+    {
+      "id": "P6",
+      "substances": ["tramadol", "fluoxetine"],
+      "severity": "high",
+      "explanation": {
+        "en": "This combination increases the risk of serotonin syndrome and seizures.",
+        "fr": "Cette association augmente le risque de syndrome sérotoninergique et de convulsions.",
+        "es": "Esta combinación aumenta el riesgo de síndrome serotoninérgico y convulsiones."
+      },
+      "source": "ANSM — Thésaurus des interactions médicamenteuses (association à prendre en compte/déconseillée) ; RCP."
+    },
+    {
+      "id": "P7",
+      "substances": ["lisinopril", "spironolactone"],
+      "severity": "medium",
+      "explanation": {
+        "en": "This combination can raise potassium levels in the blood.",
+        "fr": "Cette association peut augmenter le taux de potassium dans le sang.",
+        "es": "Esta combinación puede aumentar el nivel de potasio en la sangre."
+      },
+      "source": "ANSM — Thésaurus des interactions médicamenteuses (à prendre en compte) ; RCP."
+    },
+    {
+      "id": "P8",
+      "substances": ["ibuprofen", "lisinopril"],
+      "severity": "medium",
+      "explanation": {
+        "en": "The anti-inflammatory can reduce the blood-pressure medicine's effect and strain the kidneys.",
+        "fr": "L'anti-inflammatoire peut réduire l'effet du traitement de la tension et fatiguer les reins.",
+        "es": "El antiinflamatorio puede reducir el efecto del medicamento para la tensión y fatigar los riñones."
+      },
+      "source": "ANSM — Thésaurus des interactions médicamenteuses (AINS + IEC) ; RCP."
+    }
+  ]
+}

@@ -1,0 +1,115 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Base typography (spec § 8.6) ────────────────────────────────────────── */
+html {
+  font-size: 18px; /* normal mode */
+}
+html.large-text {
+  font-size: 24px; /* EF-11 large text mode */
+}
+body {
+  line-height: 1.5;
+  @apply text-gray-900;
+  background-color: #f7faf9;
+  background-image:
+    radial-gradient(60rem 40rem at 120% -10%, rgba(20, 184, 166, 0.1), transparent 60%),
+    radial-gradient(50rem 35rem at -20% 110%, rgba(15, 118, 110, 0.08), transparent 60%);
+  background-attachment: fixed;
+}
+@media (prefers-color-scheme: dark) {
+  body {
+    @apply dark:bg-[#0B1220] dark:text-[#F9FAFB];
+    background-color: #0b1220;
+    background-image:
+      radial-gradient(60rem 40rem at 120% -10%, rgba(20, 184, 166, 0.12), transparent 60%),
+      radial-gradient(50rem 35rem at -20% 110%, rgba(19, 78, 74, 0.35), transparent 60%);
+  }
+}
+html.large-text body {
+  line-height: 1.6;
+}
+
+/* Visible focus everywhere (BA-04 / 2.4.7). */
+:focus-visible {
+  outline: 3px solid theme('colors.primary.DEFAULT');
+  outline-offset: 2px;
+}
+
+/* Respect reduced motion (BA-09). */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Tabular figures for dosages (§ 8.6). */
+.tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+/* ── Decorative helpers ─────────────────────────────────────────────────── */
+.text-gradient {
+  @apply bg-gradient-to-r from-primary-dark via-primary to-primary-light bg-clip-text text-transparent;
+}
+@media (prefers-color-scheme: dark) {
+  .text-gradient {
+    @apply from-primary-light via-teal-300 to-teal-200;
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+.animate-float {
+  animation: float 3.5s ease-in-out infinite;
+}
+.animate-float-delayed {
+  animation: float 3.5s ease-in-out 0.6s infinite;
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-fade-in-up {
+  animation: fade-in-up 0.45s ease-out both;
+}
+
+/* ── Print / PDF export (EF-13) ──────────────────────────────────────────── */
+@media print {
+  header, .no-print {
+    display: none !important;
+  }
+  body {
+    background: #ffffff !important;
+    color: #111827 !important;
+  }
+  .print-disclaimer {
+    display: block !important;
+  }
+  .print-avoid-break {
+    break-inside: avoid;
+  }
+}
+.print-disclaimer {
+  display: none;
+}
